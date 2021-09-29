@@ -11,3 +11,7 @@
     color: #fff;
     padding: 0px 5px;
 }
+
+a[target]:not(.btn).text-decoration-unset{
+    text-decoration: unset  !important;
+}

@@ -81,3 +81,6 @@
         }
     }
 }
+a[target]:not(.btn).text-decoration-unset{
+    text-decoration: unset  !important;
+}

@@ -17,44 +17,51 @@ const ContentMain = ({
     return (
         <div className="group-content-main" >
             <div className="head-content pt-2">
-                <div className="text-conent" onClick={() => onDetailsItem(item)}>
-                    <img
-                        src={item.image || ""}
-                        className="img-hot"
-                        alt="ảnh chính trong ngày"
-                    />
+                <a href={item?.isDanTri == 1 ? item?.slug
+                    : `/chi-tiet/${item.slug || ''}_&&&_${item.id}`}
+                    target="_blank"
+                    className="text-decoration-unset"
+                >
+                    <div className="text-conent">
+                        <img
+                            src={item.image || ""}
+                            className="img-hot"
+                            alt="ảnh chính trong ngày"
+                        />
+                        {
+                            !isHome && item.title &&
+                            <div className="group-not-home" >
+                                <h4>{item.title || ''}</h4>
+                                <span className=" line-clamp-4">
+                                    {item.short_content || ''}
+                                </span><br />
+                                <span
+                                    className="f-14 author mb-5"
+                                    style={{ background: "#08aaa8", color: '#ccc' }}
+                                >{`Tác giả: ${item?.isDanTri == 1 ? 'Dân Trí' : item?.author || ''}`}</span>
+                            </div>
+                        }
+
+                        {isHome &&
+                            <h2 className="text-justify line-clamp-4 pt-2">
+                                {item.title || ''}
+                            </h2>
+                        }
+                    </div>
                     {
-                        !isHome && item.title &&
-                        <div className="group-not-home" >
-                            <h4>{item.title || ''}</h4>
-                            <span className=" line-clamp-4">
+                        isHome && item.short_content && <>
+                            <span className="text-justify line-clamp-4 ">
                                 {item.short_content || ''}
                             </span><br />
                             <span
                                 className="f-14 author mb-5"
                                 style={{ background: "#08aaa8" }}
-                            >{`Tác giả: ${item.author || ''}`}</span>
-                        </div>
-                    }
+                            >{`Tác giả: ${item?.isDanTri == 1 ? 'Dân Trí' : item?.author || ''}`}</span>
+                        </>
 
-                    {isHome &&
-                        <h2 className="text-justify line-clamp-4 pt-2">
-                            {item.title || ''}
-                        </h2>
                     }
-                </div>
-                {
-                    isHome && item.short_content && <>
-                        <span className="text-justify line-clamp-4 ">
-                            {item.short_content || ''}
-                        </span><br />
-                        <span
-                            className="f-14 author mb-5"
-                            style={{ background: "#08aaa8" }}
-                        >{`Tác giả: ${item.author || ''}`}</span>
-                    </>
+                </a>
 
-                }
 
             </div>
             {!isHome &&

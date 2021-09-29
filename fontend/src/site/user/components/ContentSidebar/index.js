@@ -89,13 +89,21 @@ const ContentSidebar = ({
                             isArray(item.data) &&
                             item.data.map((item2, index) => {
                                 return (
-                                    <div key={String(index)} className="item-content pt-2 pb-2" onClick={() => onDetailsItem(item2)}>
-                                        <label className="mb-0">{nameMenu[item2.loai_tin_id || 0]}</label>
-                                        <p className="line-clamp-4 f-14 mb-0">
-                                            {item2.title || ''}
-                                        </p>
-                                        <label className="mb-0 pt-1">{`Tác giả: ${item2.author || ''}`}</label>
-                                    </div>
+                                    <a href={item2?.isDanTri == 1 ? item2?.slug
+                                        : `/chi-tiet/${item2.slug || ''}_&&&_${item2.id}`}
+                                        target="_blank"
+                                        className="text-decoration-unset"
+                                        key={String(index)} 
+                                    >
+                                        <div className="item-content pt-2 pb-2">
+                                            <label className="mb-0">{nameMenu[item2.loai_tin_id || 0]}</label>
+                                            <p className="line-clamp-4 f-14 mb-0">
+                                                {item2.title || ''}
+                                            </p>
+                                            <label className="mb-0 pt-1">{`Tác giả: ${item2?.isDanTri == 1 ? 'Dân Trí' : item2?.author || ''}`}</label>
+                                        </div>
+                                    </a>
+
                                 )
 
                             })
