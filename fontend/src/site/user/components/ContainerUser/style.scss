@@ -1,0 +1,27 @@
+.container-page {
+    width: 1100px;
+    margin: auto;
+}
+
+.content {
+    min-height: 100vh;
+}
+
+.background-default {
+    background: #3173b3c7;
+    color: #fff;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.f-14{
+    font-size: 0.875rem;
+}

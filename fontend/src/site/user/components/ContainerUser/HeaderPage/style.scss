@@ -1,0 +1,22 @@
+.header-page {
+    .logo-search {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        .logo {
+            img {
+                width: auto;
+                height: 75px;
+                border-radius: 3px;
+            }
+        }
+        .search-input {
+            width: 235px;
+        }
+    }
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+    background-color: #c1cecd6b;
+}

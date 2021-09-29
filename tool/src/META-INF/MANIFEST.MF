@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: romcoca.Server
+Class-Path: lib/mysql-connector-java-5.1.23-bin.jar lib/json_simple-1.1.jar lib/jsoup-1.14.2.jar
+

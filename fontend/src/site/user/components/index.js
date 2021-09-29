@@ -1,0 +1,7 @@
+export { default as ContainerUser } from "./ContainerUser"
+export { default as ContentMain } from "./ContentMain"
+export { default as ContentSidebar } from "./ContentSidebar"
+export { default as LayoutDefault } from "./LayoutDefault"
+export { default as CarouselRelease } from "./CarouselRelease"
+export { default as ItemShow } from "./ItemShow"
+export { default as Covid19 } from "./Covid19"

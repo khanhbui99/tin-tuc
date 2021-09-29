@@ -1,0 +1,13 @@
+.group-title {
+    border-top: 1px solid #ddd;
+    height: 20px;
+    position: relative;
+    span {
+        font-size: 1rem;
+        font-weight: bold;
+        position: absolute;
+        top: -16px;
+        background: #fff;
+        padding-right: 1rem;
+    }
+}
